@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct HistoryView: View {
-  @Query var tipHistory: [TipHistory]
+  @Query(sort: \TipHistory.date, order: .reverse) var tipHistory: [TipHistory]
   private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .long

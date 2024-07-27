@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
   @StateObject var tipCalulatorViewModel = TipCalculatorViewModel()
+  @Environment(\.modelContext) var modelContext
 
   var body: some View {
     
@@ -28,7 +29,17 @@ struct HomeView: View {
           
           Button {
             
-            tipCalulatorViewModel.calculateTipAmount()
+            if let _ = tipCalulatorViewModel.billAmount {
+              tipCalulatorViewModel.calculateTipAmount()
+              let tipHistory = TipHistory(tipAmount: tipCalulatorViewModel.tipAmount ?? 0, date: Date.now)
+              modelContext.insert(tipHistory)
+              do {
+                try modelContext.save()
+              } catch {
+                // Handle error appropriately in your app
+                print("Failed to save tip history: \(error)")
+              }
+            }
             
           } label: {
             Text("Calculate")
@@ -50,8 +61,8 @@ struct HomeView: View {
       .ignoresSafeArea()
       .toolbar {
         ToolbarItem(placement: .topBarTrailing) {
-          Button {
-            
+          NavigationLink {
+            HistoryView()
           } label: {
             Image(systemName: "gear")
               .foregroundColor(.white)

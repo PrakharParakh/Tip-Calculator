@@ -30,6 +30,7 @@
 			membershipExceptions = (
 				BillInput.swift,
 				ContentView.swift,
+				HistoryView.swift,
 				HomeView.swift,
 				PercentOptions.swift,
 				ResultView.swift,
@@ -40,6 +41,13 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				CurvedLine.swift,
+			);
+			target = 1C744A852C54B74A00E2C1F7 /* Tip Calculator */;
+		};
+		1CC618DB2C552A0600763FAE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TipHistory.swift,
 			);
 			target = 1C744A852C54B74A00E2C1F7 /* Tip Calculator */;
 		};
@@ -57,6 +65,7 @@
 		1C744A982C54B76700E2C1F7 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1CD0F9FF2C5519FB00BC9741 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		1C744A992C54B77400E2C1F7 /* Base */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1C744A9A2C54B77A00E2C1F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Base; sourceTree = "<group>"; };
 		1C744AA42C54BD7000E2C1F7 /* Helper */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1C744AA72C54BE2E00E2C1F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Helper; sourceTree = "<group>"; };
+		1CC618D82C5527CA00763FAE /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1CC618DB2C552A0600763FAE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +101,7 @@
 				1C744A992C54B77400E2C1F7 /* Base */,
 				1C744A972C54B76000E2C1F7 /* View */,
 				1C744A982C54B76700E2C1F7 /* ViewModel */,
+				1CC618D82C5527CA00763FAE /* Model */,
 				1C744AA42C54BD7000E2C1F7 /* Helper */,
 				1C744A8D2C54B74B00E2C1F7 /* Assets.xcassets */,
 				1C744A8F2C54B74B00E2C1F7 /* Preview Content */,

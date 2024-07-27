@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+  @StateObject var tipCalulatorViewModel = TipCalculatorViewModel()
+
   var body: some View {
     
     NavigationStack {
@@ -20,11 +22,13 @@ struct HomeView: View {
             .frame(height: 150)
             .padding(.bottom)
                    
-          BillInput()
+          BillInput(tipCalculatorViewModel: tipCalulatorViewModel)
           
-          PercentOptions()
+          PercentOptions(tipCalculatorViewModel: tipCalulatorViewModel)
           
           Button {
+            
+            tipCalulatorViewModel.calculateTipAmount()
             
           } label: {
             Text("Calculate")
@@ -36,8 +40,12 @@ struct HomeView: View {
                   .frame(width: 250)
               )
           }.padding(.top)
+          
+          if tipCalulatorViewModel.showResult {
+            ResultView(tipAmount: tipCalulatorViewModel.tipAmount)
+              .padding(.top)
+          }
         }
-
       }
       .ignoresSafeArea()
       .toolbar {

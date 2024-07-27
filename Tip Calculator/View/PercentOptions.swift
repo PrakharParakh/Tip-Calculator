@@ -13,8 +13,10 @@ struct PercentOptions: View {
     .init(.flexible()),
     .init(.flexible())
   ]
-  var tipOptions: [String] = ["10 %", "15 %", "20 %", "25 %", "Custom Tip"]
+  var tipOptions: [Int] = [10, 15, 20, 25, 30, 40]
   @State var selectedTipIndex = 1
+  @State var tipCalculatorViewModel: TipCalculatorViewModel?
+
   var body: some View {
     VStack {
       Text("Choose Tip Percent")
@@ -23,7 +25,7 @@ struct PercentOptions: View {
       
       LazyVGrid(columns: grid, alignment: .center, spacing: 8) {
         ForEach(0..<tipOptions.count) { index in
-          Text(tipOptions[index])
+          Text("\(tipOptions[index]) %")
             .frame(minWidth: 80)
             .padding(.vertical)
             .padding(.horizontal)
@@ -36,6 +38,7 @@ struct PercentOptions: View {
             )
             .onTapGesture {
               if selectedTipIndex != index {
+                tipCalculatorViewModel?.tipPercent = Double(tipOptions[index])
                 withAnimation(.linear(duration: 0.2)) {
                   selectedTipIndex = index
                 }

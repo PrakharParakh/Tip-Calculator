@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct BillInput: View {
-  @State var billAmount: Decimal = 100
+  @State var billAmount: Double?
+  @State var tipCalculatorViewModel: TipCalculatorViewModel?
   var body: some View {
     VStack(alignment: .center) {
       Text("Enter Bill Amount")
@@ -17,6 +18,7 @@ struct BillInput: View {
 
       TextField("Amount", value: $billAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
         .keyboardType(.decimalPad)
+        .scrollDismissesKeyboard(.immediately)
         .tint(.green)
         .frame(width: 150)
         .padding()
@@ -24,6 +26,9 @@ struct BillInput: View {
           RoundedRectangle(cornerRadius: 12)
             .stroke(.green)
         )
+        .onSubmit {
+          tipCalculatorViewModel?.billAmount = billAmount
+        }
     }
     .padding()
   }

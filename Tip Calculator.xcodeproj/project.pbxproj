@@ -32,6 +32,7 @@
 				ContentView.swift,
 				HomeView.swift,
 				PercentOptions.swift,
+				ResultView.swift,
 			);
 			target = 1C744A852C54B74A00E2C1F7 /* Tip Calculator */;
 		};
@@ -42,11 +43,18 @@
 			);
 			target = 1C744A852C54B74A00E2C1F7 /* Tip Calculator */;
 		};
+		1CD0F9FF2C5519FB00BC9741 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TipCalculatorViewModel.swift,
+			);
+			target = 1C744A852C54B74A00E2C1F7 /* Tip Calculator */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1C744A972C54B76000E2C1F7 /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1C744A9B2C54B78100E2C1F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
-		1C744A982C54B76700E2C1F7 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		1C744A982C54B76700E2C1F7 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1CD0F9FF2C5519FB00BC9741 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		1C744A992C54B77400E2C1F7 /* Base */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1C744A9A2C54B77A00E2C1F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Base; sourceTree = "<group>"; };
 		1C744AA42C54BD7000E2C1F7 /* Helper */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1C744AA72C54BE2E00E2C1F7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Helper; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
